@@ -17,7 +17,8 @@
         <input type="text" placeholder="Digite o nome do time..." value="<?= safe($aluno['nome'])?>" require autocrement="of">
         <label>Informe quantos titulos cada time tem:</label>
         <input type="text" placeholder="Digite os titulos..." value="<?= safe($aluno['titlulos'])?>" require autocrement="of">
-       
+        <label>Bandeira do time:</label>
+        <input type="file" name="bandeira" accept="image/*"><br>
         <button type="submit">Enviar</button>
         <a href="index.php">Voltar para a lista</a>
 </form>
