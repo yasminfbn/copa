@@ -1,10 +1,37 @@
+:root {
+    --bg: #f5f5f5;
+    --text: #000000;
+    --white: #ffffff;
+    --primary: #00a6fb;
+    --primary2: #0582ca;
+    --edit: #2196F3;
+    --edit-hover: #1976D2;
+    --delete: #f44336;
+    --dark: #1b263b;
+    --border: #ddd;
+}
+
+.dark {
+    --bg: #121212;
+    --text: #ffffff;
+    --white: #1e1e1e;
+    --primary: #03045e;
+    --primary2: #023e8a;
+    --edit: #03045e;
+    --edit-hover: #000814;
+    --delete: #cf6679;
+    --dark: #000814;
+    --border: #333;
+}
+
 body {
     position: relative;
     min-height: 100vh;
     margin: 0;
     padding: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #f5f5f5;
+    background: var(--bg);
+    color: var(--text);
     width: 100%;
     height: 100%;
     overflow: visible;
@@ -37,7 +64,7 @@ h1, .AdicionarSelecao {
     line-height: 1.1;
     width: 100%;
     padding: 10px 20px;
-    background: linear-gradient(100deg, #00a6fb, #00a6fb, #00a6fb);
+    background: linear-gradient(100deg, var(--primary), var(--primary), var(--primary));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -59,12 +86,12 @@ table {
     width: 98%;
     margin: 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.20);
-    background: white;
+    background: var(--white);
     overflow: visible;
 }
 
 th {
-    background: linear-gradient(125deg, #00a6fb, #0582ca, #00a6fb);
+    background: linear-gradient(125deg, var(--primary), var(--primary2), var(--primary));
     color: white;
     padding: 18px 15px;
     text-align: center;
@@ -77,18 +104,20 @@ th {
 
 td {
     padding: 18px 15px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border);
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    color: var(--text);
 }
 
 tr:hover td {
     background: #f8f9ff;
 }
+
 .actions a.edit {
-    background: #2196F3 !important;
-    color: white !important;
+    background: var(--edit) !important;
+    color: var(--white) !important;
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 6px;
@@ -96,9 +125,13 @@ tr:hover td {
     transition: all 0.3s;
 }
 
+.actions a.edit:hover {
+    background: var(--edit-hover) !important;
+}
+
 .actions a.delete {
-    background: #f44336 !important;
-    color: white !important;
+    background: var(--delete) !important;
+    color: var(--white) !important;
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 6px;
@@ -108,8 +141,8 @@ tr:hover td {
 
 .btn_elenco {
     display: inline-block;
-    background: #1b263b;
-    color: #fff;
+    background: var(--dark);
+    color: var(--white);
     padding: 8px 14px;
     border-radius: 6px;
     text-decoration: none;
@@ -118,28 +151,29 @@ tr:hover td {
     margin-left: 8px;
 }
 
-.btn_novaSelecao{
-    background:#2196F3;
-    color:white;
-    padding:10px 20px;
-    text-decoration:none;
-    border-radius:5px;
+.btn_novaSelecao {
+    background: var(--edit);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: 500;
     transition: all 0.3s;
 }
+
 .btn_novaSelecao:hover {
-    background: #1976D2 !important;
+    background: var(--edit-hover) !important;
     transform: translateY(-2px);
 }
 
-.btn_voltar{
+.btn_voltar {
     display: block;
     margin: 20px auto 0;
-    background:#2196F3;
-    color:white;
-    padding:10px 20px;
-    text-decoration:none;
-    border-radius:5px;
+    background: var(--edit);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: 500;
     transition: all 0.3s;
     border: none;
@@ -147,7 +181,7 @@ tr:hover td {
 }
 
 .btn_voltar:hover {
-    background: #1976D2 !important;
+    background: var(--edit-hover) !important;
     transform: translateY(-2px);
 }
 
@@ -157,7 +191,7 @@ img {
     object-fit: cover;
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    border: 3px solid #fff;
+    border: 3px solid var(--white);
 }
 
 .actions {
@@ -171,8 +205,8 @@ img {
 }
 
 .kebab-btn {
-    background: #0582ca;
-    color: #fff;
+    background: var(--primary2);
+    color: var(--white);
     border: none;
     width: 38px;
     height: 38px;
@@ -186,7 +220,7 @@ img {
 }
 
 .kebab-btn:hover {
-    background: #1b263b;
+    background: var(--dark);
     transform: scale(1.05);
 }
 
@@ -194,7 +228,7 @@ img {
     position: absolute;
     right: 0;
     top: 45px;
-    background: #fff;
+    background: var(--white);
     min-width: 160px;
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.18);
@@ -209,7 +243,7 @@ img {
 .kebab-menu-list a {
     display: block;
     padding: 10px 14px;
-    color: #1b263b;
+    color: var(--dark);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -262,20 +296,20 @@ img {
 .empty {
     text-align: center;
     padding: 60px 20px;
-    background: white;
+    background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .empty h2 {
-    color: #1b263b;
+    color: var(--dark);
     margin: 0 0 15px;
     font-size: 1.8em;
 }
 
 .empty a {
-    background: #0582ca;
-    color: white;
+    background: var(--primary2);
+    color: var(--white);
     padding: 12px 30px;
     text-decoration: none;
     border-radius: 25px;
@@ -285,7 +319,7 @@ img {
 }
 
 .empty a:hover {
-    background: #00a6fb;
+    background: var(--primary);
     transform: scale(1.05);
 }
 
@@ -297,26 +331,28 @@ img {
     display: block;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #333;
+    color: var(--text);
 }
 
 .form-group input, .form-group select {
     width: 100%;
     max-width: 300px;
     padding: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border);
     border-radius: 6px;
     font-size: 16px;
+    background: var(--white);
+    color: var(--text);
 }
 
 .form-group input:focus, .form-group select:focus {
-    border-color: #00a6fb;
+    border-color: var(--primary);
     outline: none;
 }
 
 .btn-save {
-    background: #1976D2;
-    color: white;
+    background: var(--edit);
+    color: var(--white);
     padding: 15px 40px;
     border: none;
     border-radius: 8px;
@@ -327,13 +363,13 @@ img {
 }
 
 .btn-save:hover {
-    background: #1976D2;
+    background: var(--edit-hover);
     transform: translateY(-2px);
 }
 
 .btn-cancel {
     background: #6c757d;
-    color: white;
+    color: var(--white);
     padding: 15px 25px;
     text-decoration: none;
     border-radius: 8px;
@@ -347,13 +383,12 @@ img {
 }
 
 .filter-container {
-    background: white;
+    background: var(--white);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     margin-bottom: 20px;
     width: 100%;
-    margin-bottom: 20px;
 }
 
 .filter-form {
@@ -367,16 +402,16 @@ img {
 
 .filter-form select {
     padding: 12px 20px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border);
     border-radius: 8px;
     font-size: 16px;
-    background: white;
+    background: var(--white);
     min-width: 150px;
 }
 
 .filter-form button {
-    background: #00a6fb;
-    color: white;
+    background: var(--primary);
+    color: var(--white);
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
@@ -385,12 +420,12 @@ img {
 }
 
 .filter-form button:hover {
-    background: #0582ca;
+    background: var(--primary2);
 }
 
 .btn-clear {
-    background: #1b263b;
-    color: white;
+    background: var(--dark);
+    color: var(--white);
     padding: 9px 20px;
     text-decoration: none;
     border-radius: 8px;
@@ -413,8 +448,8 @@ img {
     display: inline-block;
     padding: 12px 16px;
     margin: 0 2px;
-    background: #1976D2;
-    color: #fff;
+    background: var(--edit);
+    color: var(--white);
     text-decoration: none;
     border-radius: 6px;
     border: 2px solid #dee2e6;
@@ -424,15 +459,16 @@ img {
 
 .paginacao .pag-btn:hover {
     background: #e9ecef;
-    color: #fff;
+    color: var(--white);
     transform: translateY(-1px);
 }
 
 .paginacao .pag-btn.ativo {
-    background: #00a6fb !important;
-    color: white !important;
-    border-color: #00a6fb;
+    background: var(--primary) !important;
+    color: var(--white) !important;
+    border-color: var(--primary);
 }
+
 .dashboard-mini {
     display: flex;
     gap: 10px;
@@ -442,19 +478,21 @@ img {
     justify-content: center;
     align-items: center;
 }
+
 .card-mini {
-    background: #fff;
-    border: 1px solid #00a6fb;
+    background: var(--white);
+    border: 1px solid var(--primary);
     border-radius: 8px;
     padding: 8px 12px;
     width: 180px;
     min-height: 70px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
+
 .card-mini span {
     display: block;
     font-size: 15px;
-    color: #00a6fb;
+    color: var(--primary);
     margin-bottom: 4px;
 }
 
@@ -462,6 +500,7 @@ img {
     font-size: 20px;
     color: #222;
 }
+
 /* Fundo do Modal */
 .modal-overlay {
     position: fixed;
@@ -478,7 +517,7 @@ img {
 
 /* Caixa do Modal */
 .modal-content {
-    background: white;
+    background: var(--white);
     padding: 25px;
     border-radius: 8px;
     text-align: center;
@@ -504,7 +543,7 @@ img {
 
 .btn-confirm-delete {
     background: #d9534f;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -513,12 +552,6 @@ img {
 
 .btn-confirm-delete:hover {
     background: #c9302c;
-}
-
-@media (max-width: 768px) {
-    .dashboard-mini {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 768px) {

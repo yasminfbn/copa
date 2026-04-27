@@ -17,7 +17,11 @@
         </div>
     <?php endif; ?>
 
+
     <h1 class="title"> Seleções da Copa</h1>  
+    <button id="toggleTheme" style="position:fixed; top:20px; right:20px; padding:10px 15px; border:none; border-radius:6px; cursor:pointer;">
+        🌙
+    </button>
     <p><a href="?action=novo" class="btn_novaSelecao">Nova Seleção</a></p>
     
     <div class="filtrocontainer">
@@ -212,6 +216,7 @@
                 closeDeleteModal();
             }
         }
+        
 </script>
 </body>
 </html>
