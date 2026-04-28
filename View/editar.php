@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar informações</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/assets/icone.png">
     <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">
-                
-          
 </head>
+
 <body>
+
 <div class="content">
+
     <h1 class="AdicionarSelecao">Editar Seleção</h1>
 
     <form method="POST" action="?action=atualizar">
+
         <input type="hidden" name="id" value="<?= htmlspecialchars($lista['id'] ?? '') ?>">
 
         <div class="form-group">
-            <label>Grupo: </label>
-            <input type="text" name="grupo" maxlength="1" placeholder="ex: A" required autocomplete="off"
+            <label>Grupo:</label>
+            <input type="text" name="grupo" maxlength="1"
+                   placeholder="ex: A"
+                   required autocomplete="off"
                    value="<?= htmlspecialchars($lista['grupo'] ?? '') ?>">
         </div>
 
         <div class="form-group">
-            <label>Nome da Seleção: </label>
-            <input type="text" name="nome" placeholder="ex: Brasil" required autocomplete="off"
+            <label>Nome da Seleção:</label>
+            <input type="text" name="nome"
+                   placeholder="ex: Brasil"
+                   required autocomplete="off"
                    value="<?= htmlspecialchars($lista['nome'] ?? '') ?>">
         </div>
 
         <div class="form-group">
-            <label>Títulos: </label>
-            <input type="number" name="titulos" min="0" placeholder="ex: 5" required autocomplete="off"
+            <label>Títulos:</label>
+            <input type="number" name="titulos" min="0"
+                   placeholder="ex: 5"
+                   required autocomplete="off"
                    value="<?= htmlspecialchars($lista['titulos'] ?? '') ?>">
         </div>
 
         <div class="form-group">
-            <label>Bandeira: </label>
-            <select name="bandeira">
+            <label>Bandeira:</label>
+            <select name="bandeira" onchange="falar('assets/audio/bandeira.mp3')">
+
                 <option value="">Selecione</option>
+
                 <option value="assets/africa_do_sul.jpg" <?= ($lista['bandeira'] ?? '') == 'assets/africa_do_sul.jpg' ? 'selected' : '' ?>>🇿🇦 Seleção Sul-Africana</option>
                 <option value="assets/alemanha.jpg" <?= ($lista['bandeira'] ?? '') == 'assets/alemanha.jpg' ? 'selected' : '' ?>>🇩🇪 Seleção Alemã</option>
                 <option value="assets/arabia_saudita.jpg" <?= ($lista['bandeira'] ?? '') == 'assets/arabia_saudita.jpg' ? 'selected' : '' ?>>🇸🇦 Seleção Saudita</option>
@@ -86,12 +97,22 @@
                 <option value="assets/hungria.jpg" <?= ($lista['bandeira'] ?? '') == 'assets/hungria.jpg' ? 'selected' : '' ?>>🇭🇺 Seleção Húngara</option>
                 <option value="assets/ghana.jpg" <?= ($lista['bandeira'] ?? '') == 'assets/ghana.jpg' ? 'selected' : '' ?>>🇬🇭 Seleção Ganesa</option>
                 <option value="assets/camaroes.jpg" <?= ($lista['bandeira'] ?? '') == 'assets/camaroes.jpg' ? 'selected' : '' ?>>🇨🇲 Seleção Camaronesa</option>
+
             </select>
         </div>
 
-        <button type="submit" class="btn-save">Salvar Seleção</button>
-        <a href="index.php" class="btn-cancel">Cancelar</a>
+        <button type="submit" class="btn-save" onclick="falar('assets/audio/salvar.mp3')">
+            Salvar Seleção
+        </button>
+
+        <a href="index.php" class="btn-cancel" onclick="falar('assets/audio/cancelar.mp3')">
+            Cancelar
+        </a>
+
     </form>
 </div>
+<script src="main.js"></script>
+
+
 </body>
 </html>
