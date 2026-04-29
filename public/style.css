@@ -1,5 +1,5 @@
 :root {
-    --bg: #f5f5f5;
+    --bg: #121212;
     --text: #000000;
     --white: #ffffff;
     --primary: #00a6fb;
@@ -17,7 +17,7 @@
     --error-text: #721c24;
     --neutral-bg: #ccc;
     --secondary-bg: #6c757d;
-    --fundo: url('assets/bandeirafundo.png');
+    --fundo: url('assets/fundol.png');
 }
 
 .dark {
@@ -25,9 +25,9 @@
     --text: #ffffff;
     --text_secondy: #000000;
     --white: #ffffff;
-    --primary: #0466c8;
+    --primary: #4895ef;
     --primary2: #023e8a;
-    --edit: #0466c8;
+    --edit: #227eda;
     --edit-hover: #000814;
     --delete: #cf6679;
     --dark: #000814;
@@ -40,7 +40,7 @@
     --error-text: #ff6b6b;
     --neutral-bg: #444;
     --secondary-bg: #444;
-    --fundo: url('assets/fundodark.webp');
+    --fundo: url('assets/fundol.png');
 }
 
 body {
@@ -53,7 +53,7 @@ body {
     color: var(--text);
     width: 100%;
     height: 100%;
-    overflow: visible;
+    overflow-x: hidden;
 }
 
 body::before {
@@ -67,11 +67,11 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.3;
+    opacity: 0.4;
     z-index: -1;
 }
 
-h1, .AdicionarSelecao {
+.AdicionarSelecao {
     margin: 20px 0 15px 0;
     font-size: clamp(2.5em, 6vw, 4em);
     font-weight: 900;
@@ -89,6 +89,26 @@ h1, .AdicionarSelecao {
     color: transparent;
     -webkit-text-fill-color: transparent;
 }
+h1 {
+ 
+    font-size: 50px;
+    font-family: 'Snaps Taste Outline', sans-serif;
+    font-family: 'Snaps Taste', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    line-height: 1.1;
+    width: 100%;
+    background: linear-gradient(100deg, var(--edit), var(--edit), var(--edit));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+    text-align: center;
+}
+
+
+
+
 
 .content {
     max-width: 1200px;
@@ -102,11 +122,14 @@ h1, .AdicionarSelecao {
 
 table {
     border-collapse: collapse;
-    width: 98%;
-    margin: 0;
+    width: 90%;             
+    max-width: 1700px;
+    margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0,0,0,0.20);
     background: var(--white);
     overflow: visible;
+    border-radius: 0px 0px 15px 15px;
+    table-layout: fixed; 
 }
 
 th {
@@ -128,6 +151,7 @@ td {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     color: var(--text_secondy);
+  
     
 }
 
@@ -169,6 +193,18 @@ td {
 }
 
 .btn_novaSelecao {
+    background: var(--primary2);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: block;       
+    width: fit-content;   
+     
+}
+.btn_novoJogador{
     background: var(--edit);
     color: var(--white);
     padding: 10px 20px;
@@ -176,6 +212,9 @@ td {
     border-radius: 5px;
     font-weight: 500;
     transition: all 0.3s;
+    display: block;       
+    width: fit-content;   
+    margin: 0 auto;
 }
 
 .btn_novaSelecao:hover {
@@ -348,7 +387,7 @@ img {
     display: block;
     font-weight: 600;
     margin-bottom: 5px;
-    color: var(--text);
+    color: var(--white);
 }
 
 .form-group input, .form-group select {
@@ -469,19 +508,18 @@ img {
     color: var(--white);
     text-decoration: none;
     border-radius: 6px;
-    border: 2px solid #dee2e6;
     font-weight: 600;
     transition: all 0.3s;
 }
 
 .paginacao .pag-btn:hover {
-    background-color: var(--edit);
+    background-color: var(--primary2);
     color: var(--white);
     transform: translateY(-1px);
 }
 
 .paginacao .pag-btn.ativo {
-    background: var(--primary) !important;
+    background: var(--primary2) !important;
     color: var(--white) !important;
     border-color: var(--primary);
 }
@@ -597,7 +635,7 @@ img {
 .slider {
     position: absolute;
     cursor: pointer;
-    background: var(--secondary-bg);
+    background: var(--edit-hover);
     border-radius: 30px;
     width: 100%;
     height: 100%;
@@ -622,4 +660,25 @@ input:checked + .slider {
 
 input:checked + .slider::before {
     transform: translateX(30px);
+}
+.header-elenco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-elenco img {
+    width: 300px;  
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.nome-selecao{
+    text-align: center;
+    font-family: 'eBuenaClassic', sans-serif;
+    font-size: 40px;
+    margin-bottom: 50px ;
+    color: var(--white);
 }

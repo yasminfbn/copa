@@ -19,7 +19,7 @@ class Controller {
     public function index() {
         $grupo = $_GET['grupo'] ?? '';
         $pagina = max(1, (int)($_GET['pagina'] ?? 1));
-        $limite = 6;
+        $limite = 7;
     
         $total = $this->selecao->contarSelecoes($grupo);
         $totalPaginas = max(1, (int)ceil($total / $limite));

@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elenco</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">  
+    <link href="https://fonts.cdnfonts.com/css/ebuenaclassic" rel="stylesheet">
+                
 </head>
+
 <body>
 
-<h1>
-    Elenco de <?= htmlspecialchars($selecao['nome'] ?? 'Seleção Desconhecida') ?>
-</h1>
+<!-- 🔥 BANDEIRA NO TOPO -->
+    <div class="header-elenco">
+        <?php if (!empty($selecao['bandeira'])): ?>
+            <img src="<?= htmlspecialchars($selecao['bandeira']) ?>" alt="Bandeira">
+        <?php else: ?>
+            <p>Sem bandeira</p>
+        <?php endif; ?>
+    </div>
+    <p class="nome-selecao">
+            <?= htmlspecialchars($selecao['nome'] ?? 'Seleção') ?>
+    </p>
+
 
 <?php if (isset($_GET['msg']) && $_GET['msg'] === 'deletado'): ?>
     <div class="success">
@@ -19,7 +34,7 @@
 <?php endif; ?>
 
 <p>
-    <a class="btn_novaSelecao"
+    <a class="btn_novoJogador"
        href="index.php?action=adicionarJogador&id=<?= $selecao['id'] ?>">
        Adicionar jogador no elenco
     </a>
@@ -41,21 +56,11 @@
     <?php if (!empty($jogadores)): ?>
         <?php foreach ($jogadores as $jogador): ?>
             <tr>
-
-                <td>
-                    <?= htmlspecialchars($jogador['nome']) ?>
-                </td>
-
-                <td>
-                    <?= htmlspecialchars($jogador['posicao']) ?>
-                </td>
-
-                <td>
-                    <?= htmlspecialchars($jogador['numeroCamisa']) ?>
-                </td>
+                <td><?= htmlspecialchars($jogador['nome']) ?></td>
+                <td><?= htmlspecialchars($jogador['posicao']) ?></td>
+                <td><?= htmlspecialchars($jogador['numeroCamisa']) ?></td>
 
                 <td class="actions">
-
                     <a class="edit"
                        href="index.php?action=editarJogador&id=<?= $jogador['id'] ?>">
                        Editar
@@ -65,7 +70,6 @@
                        onclick="openDeleteModal('<?= $jogador['id'] ?>','<?= htmlspecialchars($jogador['nome']) ?>')">
                         Apagar
                     </a>
-
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -83,6 +87,7 @@
     Voltar para a listagem
 </button>
 
+<!-- PAGINAÇÃO -->
 <div class="paginacao">
 
     <?php if ($pagina > 1): ?>
@@ -95,6 +100,7 @@
     <?php
     $inicio = max(1, $pagina - 2);
     $fim = min($totalPaginas, $pagina + 2);
+
     for ($i = $inicio; $i <= $fim; $i++):
     ?>
         <a class="pag-btn <?= $i == $pagina ? 'ativo' : '' ?>"

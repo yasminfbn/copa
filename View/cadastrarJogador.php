@@ -6,7 +6,9 @@
     <title>Adicionar Jogador</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/assets/icone.png">
-    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">  
+    <link href="https://fonts.cdnfonts.com/css/ebuenaclassic" rel="stylesheet">
+                
 </head>
 
 <body>
@@ -15,9 +17,10 @@
     <h1 class="AdicionarSelecao">Adicionar Jogador</h1>
 
     <label class="theme-switch">
-        <input type="checkbox" id="toggleTheme">
-        <span class="slider"></span>
-    </label>
+            <input type="checkbox" id="toggleTheme"
+                   onclick="falarSistema('Alternando tema')">
+            <span class="slider"></span>
+    </label>>
 
     <form method="POST" action="index.php?action=adicionarJogador&id=<?= $selecao['id'] ?>">
 

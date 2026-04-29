@@ -105,13 +105,24 @@ function toggleAudio() {
 
 // ===================== FUNÇÃO DE FALA =====================
 function falarSistema(texto) {
-    if (!vozAtiva) return; // 
+    if (!vozAtiva) return;
 
-    const msg = new SpeechSynthesisUtterance(texto);
-    msg.lang = "pt-BR";
-    msg.rate = 1;
-    msg.pitch = 1;
+    const speak = () => {
+        const msg = new SpeechSynthesisUtterance(texto);
+        msg.lang = "pt-BR";
 
-    speechSynthesis.cancel();
-    speechSynthesis.speak(msg);
+        const vozes = speechSynthesis.getVoices();
+        const vozPt = vozes.find(v => v.lang === "pt-BR");
+
+        if (vozPt) msg.voice = vozPt;
+
+        speechSynthesis.cancel();
+        speechSynthesis.speak(msg);
+    };
+
+    if (speechSynthesis.getVoices().length === 0) {
+        speechSynthesis.onvoiceschanged = speak;
+    } else {
+        speak();
+    }
 }

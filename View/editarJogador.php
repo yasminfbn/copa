@@ -6,7 +6,9 @@
     <title>Editar Jogador</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/assets/icone.png">
-    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">  
+    <link href="https://fonts.cdnfonts.com/css/ebuenaclassic" rel="stylesheet">
+                
 </head>
 <body>
 

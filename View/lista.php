@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/assets/icone.png">
-    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">           
+    <link href="https://fonts.cdnfonts.com/css/snaps-taste-outline" rel="stylesheet">  
+    <link href="https://fonts.cdnfonts.com/css/ebuenaclassic" rel="stylesheet">
+                
+                         
     <title>Seleções da Copa</title>
 </head>
 
@@ -19,21 +22,17 @@
 <?php endif; ?>
 
 
-<h1 class="title"
-    onclick="falarSistema('Seleções da Copa')">
-    Seleções da Copa
-</h1>  
-
-<label class="theme-switch">
-    <input type="checkbox" id="toggleTheme" onclick="falarSistema('Alternando tema')">
-    <span class="slider"></span>
-</label>
+        <label class="theme-switch">
+            <input type="checkbox" id="toggleTheme"
+                   onclick="falarSistema('Alternando tema')">
+            <span class="slider"></span>
+        </label>
 
 <p>
     <a href="?action=novo"
        class="btn_novaSelecao"
-       onclick="falarSistema('Criando nova seleção')">
-       Nova Seleção
+       onclick="falarSistema('Aqui cria uma nova seleção')">
+       Adicionar Seleção
     </a>
 </p>
 
@@ -183,15 +182,14 @@
 
 </table>
 <?php else: ?>
-    <div class="empty"
-         onclick="falarSistema('Nenhuma seleção encontrada')">
+    <div class="empty">
         <h2>Nenhuma seleção cadastrada</h2>
         <p><a href="?action=novo">Cadastre a primeira seleção</a></p>
     </div>
 <?php endif; ?>
 
 
-<!-- PAGINAÇÃO CORRIGIDA -->
+
 <?php
 $inicio = max(1, $pagina - 2);
 $fim = min($totalPaginas, $pagina + 2);
@@ -258,10 +256,7 @@ $fim = min($totalPaginas, $pagina + 2);
 </div>
 
 
-<button onclick="toggleAudio(); falarSistema('Ativando narração')"
-        class="btn_novaSelecao">
-    Ativar Narração
-</button>
+
 
 
 <script src="main.js"></script>

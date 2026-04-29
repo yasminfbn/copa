@@ -97,7 +97,7 @@ class JogadorController {
     }
 
     private function buscarSelecao($id) {
-        $sql = "SELECT id, nome, grupo FROM selecoes WHERE id = ?";
+        $sql = "SELECT id, nome, grupo, bandeira FROM selecoes WHERE id = ?";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
