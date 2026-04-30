@@ -22,7 +22,7 @@
             <span class="slider"></span>
     </label>>
 
-    <form method="POST" action="index.php?action=adicionarJogador&id=<?= $selecao['id'] ?>">
+    <form class="forms_create" method="POST" action="index.php?action=adicionarJogador&id=<?= $selecao['id'] ?>">
 
         <div class="form-group">
             <label>Nome:</label>

@@ -1,8 +1,9 @@
 :root {
-    --bg: #121212;
+    --bg: #000000;
+    --table: #ffffff;
     --text: #000000;
     --white: #ffffff;
-    --primary: #00a6fb;
+    --primary: #01baef;
     --primary2: #0582ca;
     --edit: #2196F3;
     --edit-hover: #1976D2;
@@ -22,10 +23,11 @@
 
 .dark {
     --bg: #121212;
+    --table: #000000;
     --text: #ffffff;
-    --text_secondy: #000000;
+    --text_secondy: #ffffff;
     --white: #ffffff;
-    --primary: #4895ef;
+    --primary: #001d3d;
     --primary2: #023e8a;
     --edit: #227eda;
     --edit-hover: #000814;
@@ -40,7 +42,7 @@
     --error-text: #ff6b6b;
     --neutral-bg: #444;
     --secondary-bg: #444;
-    --fundo: url('assets/fundol.png');
+    --fundo: url('assets/fundod.png');
 }
 
 body {
@@ -83,7 +85,7 @@ body::before {
     line-height: 1.1;
     width: 100%;
     padding: 10px 20px;
-    background: linear-gradient(100deg, var(--primary), var(--primary), var(--primary));
+    background: linear-gradient(100deg, var(--edit), var(--edit), var(--edit));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -109,7 +111,6 @@ h1 {
 
 
 
-
 .content {
     max-width: 1200px;
     margin: 0 auto;
@@ -126,7 +127,7 @@ table {
     max-width: 1700px;
     margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0,0,0,0.20);
-    background: var(--white);
+    background: var(--table);
     overflow: visible;
     border-radius: 0px 0px 15px 15px;
     table-layout: fixed; 
@@ -378,6 +379,7 @@ img {
     background: var(--primary);
     transform: scale(1.05);
 }
+
 
 .form-group {
     margin-bottom: 20px;

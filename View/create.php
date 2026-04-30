@@ -21,7 +21,7 @@
             <span class="slider"></span>
         </label>
 
-    <form method="POST" action="?action=salvar">
+    <form method="POST" class="forms_transparente"  action="?action=salvar">
 
         <div class="form-group">
             <label>Grupo:</label>
